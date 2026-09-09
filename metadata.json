@@ -1,0 +1,6 @@
+{
+  "name": "X Board Keyboard",
+  "description": "Android 8+ English virtual keyboard with stylish fonts, emojis, text decoration styles, clipboard history, sound effects, and word auto-suggestions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
