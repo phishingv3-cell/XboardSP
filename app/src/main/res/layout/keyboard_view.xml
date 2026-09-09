@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xboard_keyboard_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#121214">
+
+    <!-- Top Toolbar Row with 6 Buttons -->
+    <LinearLayout
+        android:id="@+id/toolbar_buttons_row"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:background="#0A0A0C"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <ImageButton
+            android:id="@+id/btn_tool_emoji"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Emoji Picker"
+            android:src="@drawable/ic_emoji"
+            android:tint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_tool_font"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="Font"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_tool_style"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="Style"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/btn_tool_clipboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Clipboard History"
+            android:src="@drawable/ic_clipboard"
+            android:tint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btn_tool_help"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Help"
+            android:src="@drawable/ic_help"
+            android:tint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btn_tool_sound"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Sound Toggle"
+            android:src="@drawable/ic_sound"
+            android:tint="#07F57E" />
+    </LinearLayout>
+
+    <!-- Word Auto-Suggest Strip -->
+    <HorizontalScrollView
+        android:id="@+id/suggestions_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="#141418"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/suggestions_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:gravity="center_vertical" />
+    </HorizontalScrollView>
+
+    <!-- Switchable View 1: Letter Keys Layout -->
+    <LinearLayout
+        android:id="@+id/keyboard_keys_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <!-- Row 1: Q W E R T Y U I O P -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <!-- Key buttons A-Z with #202026 background and #FFFFFF text -->
+        </LinearLayout>
+
+        <!-- Row 2: A S D F G H J K L -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="4dp">
+        </LinearLayout>
+
+        <!-- Row 3: Shift, Z X C V B N M, Backspace -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="4dp">
+
+            <!-- Shift button: Color #07F57E (Neon Green), Black Text -->
+            <Button
+                android:id="@+id/btn_key_shift"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:backgroundTint="#07F57E"
+                android:text="⇧"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <!-- Middle Keys Z-M -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7" />
+
+            <!-- Backspace button -->
+            <Button
+                android:id="@+id/btn_key_backspace"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:backgroundTint="#202026"
+                android:text="⌫"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Row 4: ?123, Space (X Board), Enter -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btn_key_symbols"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.3"
+                android:backgroundTint="#202026"
+                android:text="?123"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btn_key_comma"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:backgroundTint="#202026"
+                android:text=","
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <!-- Dedicated Emoji Quick Button -->
+            <Button
+                android:id="@+id/btn_key_emoji"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:backgroundTint="#202026"
+                android:text="😊"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <!-- Space button with text 'X Board' and color #07F57E -->
+            <Button
+                android:id="@+id/btn_key_space"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4.4"
+                android:backgroundTint="#07F57E"
+                android:text="X Board"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_key_period"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:backgroundTint="#202026"
+                android:text="."
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <!-- Enter button with color #07F57E -->
+            <Button
+                android:id="@+id/btn_key_enter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.7"
+                android:backgroundTint="#07F57E"
+                android:text="Enter ↵"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Switchable View 2: Tool Panel Layout (Replaces letter keys when a tool is selected) -->
+    <LinearLayout
+        android:id="@+id/tool_panel_container"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:orientation="vertical"
+        android:background="#101012"
+        android:visibility="gone"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_panel_back"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:backgroundTint="#202026"
+                android:text="← Back to Keys"
+                android:textColor="#07F57E"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tool_panel_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Select Item"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/tool_panel_content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+</LinearLayout>
